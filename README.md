@@ -1,6 +1,6 @@
 # @team.poi/code_block
 
-![Code Block]()
+![Code Block](https://github.com/team-Poi/code_block/blob/main/assets/codeblock.png?raw=true)
 
 ## Installation
 
