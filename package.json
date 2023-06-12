@@ -1,7 +1,7 @@
 {
   "name": "@team.poi/code_block",
   "private": false,
-  "version": "1.0.1-1",
+  "version": "1.0.1-2",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.1",
