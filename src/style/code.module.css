@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+}
+
+.copy {
+  position: absolute;
+  top: -12px;
+  transform: translateY(20%);
+  right: 12px;
+  --size: 1.2rem;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy:hover {
+  transform: translateY(20%) scale(1.2);
+}
+
+.icon {
+  width: var(--size);
+}
+
+.code,
+.code > * {
+  background-color: #282c34;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+
+.code {
+  margin: 6px;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.code:hover {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.code > pre {
+  margin: 0px 4px;
+  padding: 1rem 0.5rem !important;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  left: 0px;
+  top: -25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ccc;
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  column-gap: 6px;
+  align-items: center;
+  transform: translateY(-18%);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.dots > span {
+  display: block;
+  --size: 12px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--size) / 2);
+}
+
+.dots > span:first-child {
+  background-color: #ff5f56;
+}
+
+.dots > span:nth-child(2) {
+  background-color: #ffbd2e;
+}
+
+.dots > span:last-child {
+  background-color: #27c93f;
+}
