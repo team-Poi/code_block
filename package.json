@@ -47,5 +47,10 @@
   ],
   "dependencies": {
     "react-syntax-highlighter": "^15.5.0"
+  },
+  "homepage": "https://github.com/team-Poi/code_block",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/team-Poi/code_block"
   }
 }
