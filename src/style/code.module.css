@@ -1,12 +1,15 @@
 .container {
   position: relative;
+  transition: all 0.2s;
+  padding: 0px;
+  border: none;
 }
 
 .copy {
   position: absolute;
   top: -12px;
   transform: translateY(20%);
-  right: 12px;
+  right: 6px;
   --size: 1.2rem;
   width: var(--size);
   height: var(--size);
@@ -33,6 +36,10 @@
   margin: 6px;
   transition: all 0.2s;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding: 3px;
 }
 
 .code:hover {
@@ -49,6 +56,7 @@
   flex-direction: column;
   padding: 12px;
   position: relative;
+  margin-bottom: 6px;
 }
 
 .title {
@@ -63,6 +71,7 @@
   color: #ccc;
   font-size: 0.85rem;
   margin-top: 12px;
+  pointer-events: none;
 }
 
 .dots {
@@ -78,12 +87,38 @@
   margin-left: 12px;
 }
 
+.full > .code > pre {
+  overflow-y: auto;
+  height: calc(100% - 12px);
+}
+
+.full > .code > pre::-webkit-scrollbar {
+  width: 10px;
+}
+
+.full > .code > pre::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 5px;
+}
+.full > .code > pre::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 5px;
+}
+
 .dots > span {
-  display: block;
   --size: 12px;
   width: var(--size);
   height: var(--size);
   border-radius: calc(var(--size) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dots > span > svg {
+  width: 75%;
+  height: auto;
 }
 
 .dots > span:first-child {
@@ -96,4 +131,41 @@
 
 .dots > span:last-child {
   background-color: #27c93f;
+}
+
+.full {
+  position: fixed;
+  --padding: 3rem;
+  left: var(--padding);
+  top: var(--padding);
+  bottom: var(--padding);
+  right: var(--padding);
+  box-sizing: border-box;
+  z-index: 99999;
+}
+
+.full > div {
+  height: 100%;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+.bg {
+  z-index: 99998;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.showmore {
+  color: gray;
+  font-size: 14px;
+  margin-top: -0.8rem;
+  padding-left: 0.4rem;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
 }
