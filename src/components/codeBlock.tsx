@@ -115,8 +115,9 @@ export default function CodeBlock(props: {
       },
     ];
 
-  const toggleFullsized = () => {
+  const toggleFullsized = (data?: boolean) => {
     setFullsized((j) => {
+      const jj = !data || j;
       if (codeRef.current) {
         setTPos(codeRef.current.offsetTop);
         setLPos(codeRef.current.offsetLeft);
@@ -124,7 +125,7 @@ export default function CodeBlock(props: {
         setHSize(codeRef.current.clientHeight);
       }
 
-      if (j) {
+      if (jj) {
         clearTimeout(int_er.current);
         setPositioned(false);
       } else
@@ -132,7 +133,7 @@ export default function CodeBlock(props: {
           setPositioned(true);
         }, 0);
 
-      return !j;
+      return !jj;
     });
   };
 
@@ -159,13 +160,28 @@ export default function CodeBlock(props: {
         <div className={styles.headerContainer}>
           <div className={styles.header}>
             <div className={styles.dots}>
-              <span className={styles.dot} onClick={toggleFullsized}>
+              <span
+                className={styles.dot}
+                onClick={() => {
+                  toggleFullsized(false);
+                }}
+              >
                 <CloseIcon />
               </span>
-              <span className={styles.dot} onClick={toggleFullsized}>
+              <span
+                className={styles.dot}
+                onClick={() => {
+                  toggleFullsized(false);
+                }}
+              >
                 <MinimizeIcon />
               </span>
-              <span className={styles.dot} onClick={toggleFullsized}>
+              <span
+                className={styles.dot}
+                onClick={() => {
+                  toggleFullsized(true);
+                }}
+              >
                 <FullscreenIcon />
               </span>
               <span
@@ -213,7 +229,9 @@ export default function CodeBlock(props: {
       </div>
       <div
         className={classNames(styles.bg, optCSS(fullsized, styles.enabled))}
-        onClick={toggleFullsized}
+        onClick={() => {
+          toggleFullsized(false);
+        }}
       ></div>
     </div>
   );
